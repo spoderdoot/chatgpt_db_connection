@@ -16,7 +16,7 @@ cursor.execute('SELECT id FROM t_skill_strengths')
 skill_strength_ids = [row[0] for row in cursor.fetchall()]
 
 # The number of random mappings you want to create
-num_mappings = 40
+num_mappings = 50
 
 # Randomly map employees to projects
 for _ in range(num_mappings):
@@ -25,12 +25,16 @@ for _ in range(num_mappings):
     skill_id = random.choice(skill_ids)
     skill_strength_id = random.choice(skill_strength_ids)
 
-    # Insert the mapping into the employees_in_projects table
-    cursor.execute('INSERT INTO t_employee_skills (employee_id, skill_id, skill_strength_id) VALUES (?, ?, ?)',
-                   (employee_id, skill_id, skill_strength_id))
+    try:
+        # Insert the mapping into the employees_in_projects table
+        cursor.execute('INSERT INTO t_employee_skills (employee_id, skill_id, skill_strength_id) VALUES (?, ?, ?)',
+                       (employee_id, skill_id, skill_strength_id))
+        conn.commit()
+    except sqlite3.IntegrityError:
+        # Handle duplicate entries
+        pass
 
-# Commit the changes and close the connection
-conn.commit()
+# Close the connection
 conn.close()
 
 print(f"{num_mappings} random employee skill mappings with respective skill strengths have been created.")
