@@ -1,0 +1,11 @@
+java
+angular
+sql
+nosql
+data analysis
+project management
+unit testing
+react
+azure
+aws
+google cloud

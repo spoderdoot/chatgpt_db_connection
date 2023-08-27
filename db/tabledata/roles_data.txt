@@ -1,0 +1,6 @@
+developer
+architect
+project lead
+tester
+product owner
+scrum master
