@@ -36,9 +36,12 @@ Flas-restx enables the automatic generation of an API documentation using Swagge
 
 ## Set up the database  
 Navigate to the db directory and execute the following commands
-1. Navigate to the _/util_ directory  
+1. Navigate to the _db/util_ directory  
 2. Execute  
 `sh recreate_db.sh`
 # Start the application
 In the root directory run:  
 `python api.py`
+
+## Testing the endpoints
+Thanks to Flask-restx when the application is started you can go to the [Swagger UI](http://127.0.0.1:5000/). The endpoints are assigned to their relevant namespaces. 
