@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "GPT Organization",
+    "name_for_model": "gptorganization",
+    "description_for_human": "Manage your Organization using GPT. You can view your projects and employees.",
+    "description_for_model": "Help the user with managing their GPT organization. You can view employees, projects, employee skills, roles of employees in projects, employees in projects.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://localhost:5000/openapi.yaml"
+    },
+    "logo_url": "http://localhost:5000/logo.png",
+    "contact_email": "fernandopfennig@gmail.com",
+    "legal_info_url": "http://www.google.com"
+}
