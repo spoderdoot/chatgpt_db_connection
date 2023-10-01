@@ -7,11 +7,19 @@ api = Api(app)
 
 PORT = 5000
 
+database_namespace = Namespace('Database', description='This namespace contains the database relevant endpoints.')
 employee_namespace = Namespace('Employees', description='This namespace contains the employee relevant endpoints.')
 project_namespace = Namespace('Projects', description='This namespace contains the profect relevant endpoints.')
 
+api.add_namespace(database_namespace)
 api.add_namespace(employee_namespace)
 api.add_namespace(project_namespace)
+
+@database_namespace.route('metadata')
+class Database(Resource):
+    def get(self):
+        metadata = get_metadata_from_db()
+        return metadata
 
 @employee_namespace.route('')
 class Employees(Resource):

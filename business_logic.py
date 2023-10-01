@@ -1,5 +1,22 @@
 import sqlite3
 
+def get_metadata_from_db():
+    conn = sqlite3.connect('db/gpt_organization.db')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = [row[0] for row in cursor.fetchall()]
+
+    metadata = {}
+    for table in tables:
+        cursor.execute(f"PRAGMA table_info({table})")
+        table_metadata = cursor.fetchall()
+        metadata[table] = table_metadata
+
+    return {'metadata': metadata}
+
+
+
 def get_employees_from_db():
     conn = sqlite3.connect('db/gpt_organization.db')
     cursor = conn.cursor()
