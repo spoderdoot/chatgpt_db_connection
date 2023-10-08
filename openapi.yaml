@@ -1,0 +1,48 @@
+openapi: 3.0.1
+info:
+  title: SQLite Database API
+  version: 1.0.0
+  description: An API for interacting with an SQLite database.
+servers:
+  - url: http://localhost:5000
+paths:
+  database/metadata:
+    get:
+      summary: Get Database Metadata
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  metadata:
+                    type: object
+                    description: Metadata of the SQLite database
+      security: []
+  database/execute_query:
+    post:
+      summary: Execute SQL Query
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: SQL Query to execute
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    description: Result of the SQL query execution
+      security: []

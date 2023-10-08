@@ -1,17 +1,17 @@
 {
     "schema_version": "v1",
-    "name_for_human": "GPT Organization",
-    "name_for_model": "gptorganization",
-    "description_for_human": "Manage your Organization using GPT. You can view your projects and employees.",
-    "description_for_model": "Help the user with managing their GPT organization. You can view employees, projects, employee skills, roles of employees in projects, employees in projects.",
+    "name_for_human": "SQLite Querier",
+    "name_for_model": "gptsqlitequeries",
+    "description_for_human": "Query your SQLite database using GPT. You can view the metadata of the table and let ChatGPT generate SQL queries based on the metadata.",
+    "description_for_model": "Help the user with managing their sqlite database. You can view the metadata of a local sqlite3 database. You can also query for the content of table in the provided sqlite database. You send SQL queries in the body in a query field in the JSON format.",
     "auth": {
         "type": "none"
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:5000/openapi.yaml"
+        "url": "http://localhost:5000/info/openapi.yaml"
     },
-    "logo_url": "http://localhost:5000/logo.png",
+    "logo_url": "http://127.0.0.1:5000/info/logo",
     "contact_email": "fernandopfennig@gmail.com",
     "legal_info_url": "http://www.google.com"
 }
