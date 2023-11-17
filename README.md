@@ -1,5 +1,5 @@
 # chatgpt_db_connection 
-This project sets up a DB and API for the local use with ChatGPT. The database uses **SQLite** and **Flask** is used to provide server functionalities. The API is documented with **Swagger**.
+This project sets up a DB and API for the local use with ChatGPT. The database uses **SQLite** and **Flask** is used to provide server functionalities. The API is documented with **Swagger**. To provide the endpoints to a GPT **ngrok** is required.
 
 # Requirements
 - Python 3.11.4
@@ -39,9 +39,28 @@ Navigate to the db directory and execute the following commands
 1. Navigate to the _db/util_ directory  
 2. Execute  
 `sh recreate_db.sh`
+
+# Enable a GPT to access the application running on localhost (For the Database API example)  
+1. Download [ngrok](https://ngrok.com/download)
+2. Extract the folder
+3. Open a CLI window in the folder
+4. Execute  
+`./ngrok.exe http 5000` 
+5. Copy the _Forwarding_ URL
+6. Paste the URL in the **NGROK_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
+
 # Start the application
 In the root directory run:  
 `python api.py`
 
-## Testing the endpoints
+# Set up the connection from ChatGPT to the API
+1. Go to your own ChatGPT
+2. Configure a _name_ and _instructions_
+3. Configure _actions_
+4. Import the _openapi.yaml_ content from  
+`NGROK_URL/info/openapi`
+5. Verify the that the API endpoints **getDatabaseMetadata** and **executeSQLQuery** are there
+6. (Optional) Test the API by using a prompt which gets the current metadata of the database
+
+# Testing the endpoints
 Thanks to Flask-restx when the application is started you can go to the [Swagger UI](http://127.0.0.1:5000/). The endpoints are assigned to their relevant namespaces. 

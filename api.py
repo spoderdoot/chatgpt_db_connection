@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, make_response
 from flask_restx import fields, Api, Resource, Namespace
 from business_logic import *
 
@@ -37,7 +37,9 @@ class Database(Resource):
 @info_namespace.route('/openapi')
 class OpenApi(Resource):
     def get(self):
-        return send_file('openapi.yaml')
+        with open('openapi.yaml', 'r') as file:
+            content = file.read()
+        return make_response(content, 200, {'Content-Type': 'text/yaml'})
 
 @info_namespace.route('/logo')
 class Logo(Resource):
