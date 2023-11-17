@@ -9,9 +9,9 @@
     },
     "api": {
         "type": "openapi",
-        "url": "http://localhost:5000/info/openapi.yaml"
+        "url": "NGROK_URL/info/openapi"
     },
-    "logo_url": "http://127.0.0.1:5000/info/logo",
+    "logo_url": "NGROK_URL/info/logo",
     "contact_email": "fernandopfennig@gmail.com",
     "legal_info_url": "http://www.google.com"
 }
