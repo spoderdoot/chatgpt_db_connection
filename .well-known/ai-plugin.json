@@ -9,9 +9,9 @@
     },
     "api": {
         "type": "openapi",
-        "url": "NGROK_URL/info/openapi"
+        "url": "SERVEO_URL/info/openapi"
     },
-    "logo_url": "NGROK_URL/info/logo",
+    "logo_url": "SERVEO_URL/info/logo",
     "contact_email": "fernandopfennig@gmail.com",
     "legal_info_url": "http://www.google.com"
 }

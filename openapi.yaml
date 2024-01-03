@@ -4,7 +4,7 @@
   "version": "1.0.0"
   "description": "An API for interacting with an SQLite database."
 "servers":
-  - "url": "NGROK_URL"
+  - "url": "SERVEO_URL"
 "paths":
   "/database/metadata":
     "get":
