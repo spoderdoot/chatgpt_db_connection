@@ -44,12 +44,12 @@ Navigate to the db directory and execute the following commands
 `sh recreate_db.sh`
 
 # Enable a GPT to access the application running on localhost (For the Database API example)  
-1. Go to [serveo](https://serveo.net/)
+1. Go to [localtunnel](https://localtunnel.github.io/www/)
 2. Open a terminal
 3. Execute   
-`ssh -R 80:localhost:5000 serveo.net`
+`lt --port 5000`
 4. Copy the _Forwarding_ URL
-5. Paste the URL in the **SERVEO_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
+5. Paste the URL in the **LT_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
 
 # Start the application
 In the root directory run:  
