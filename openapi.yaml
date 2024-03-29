@@ -4,7 +4,7 @@
   "version": "1.0.0"
   "description": "An API for interacting with an SQLite database."
 "servers":
-  - "url": "SERVEO_URL"
+  - "url": "LT_URL"
 "paths":
   "/database/metadata":
     "get":

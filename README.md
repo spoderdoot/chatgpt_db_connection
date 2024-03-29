@@ -44,12 +44,12 @@ Navigate to the db directory and execute the following commands
 `sh recreate_db.sh`
 
 # Enable a GPT to access the application running on localhost (For the Database API example)  
-1. Go to [localtunnel](https://localtunnel.github.io/www/)
-2. Open a terminal
-3. Execute   
+1. Install [localtunnel](https://localtunnel.github.io/www/) with  
+`npm install -g localtunnel`
+2. Execute   
 `lt --port 5000`
-4. Copy the _Forwarding_ URL
-5. Paste the URL in the **LT_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
+3. Copy the _Forwarding_ URL
+4. Paste the URL in the **LT_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
 
 # Start the application
 In the root directory run:  
@@ -60,7 +60,7 @@ In the root directory run:
 2. Configure a _name_ and _instructions_
 3. Configure _actions_
 4. Import the _openapi.yaml_ content from  
-`SERVEO_URL/info/openapi`
+`LT_URL/info/openapi`
 5. Verify the that the API endpoints **getDatabaseMetadata** and **executeSQLQuery** are there
 6. (Optional) Test the API by using a prompt which gets the current metadata of the database
 
