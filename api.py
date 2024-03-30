@@ -41,11 +41,5 @@ class OpenApi(Resource):
             content = file.read()
         return make_response(content, 200, {'Content-Type': 'text/yaml'})
 
-# This route returns the logo
-@info_namespace.route('/logo')
-class Logo(Resource):
-    def get(self):
-        return send_file('logo.png', mimetype='image/png')
-
 if __name__ == '__main__':
     app.run(port=PORT, debug=True)

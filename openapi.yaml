@@ -4,7 +4,7 @@
   "version": "1.0.0"
   "description": "An API for interacting with an SQLite database."
 "servers":
-  - "url": "LT_URL"
+  - "url": "https://soft-lands-think.loca.lt"
 "paths":
   "/database/metadata":
     "get":
