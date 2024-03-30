@@ -2,8 +2,11 @@
 This project sets up a DB and API for the local use with ChatGPT. The database uses **SQLite** and **Flask** is used to provide server functionalities. The API is documented with **Swagger**. To provide the endpoints to a GPT opening a tunnel with **serveo** is required.
 
 # Requirements
-- Python 3.11.4
-- SQLite 2.6.0 (comes pre-installed)
+| Technology  | Version |
+| ------------- | ------------- |
+| Python  | 3.11.4  |
+| SQLite  | 2.6.0  |
+| npm  | 10.2.4  |
 
 # Setup
 
@@ -30,6 +33,8 @@ This project sets up a DB and API for the local use with ChatGPT. The database u
 ## Install the dependencies
 - Navigate to the virtual environment /env and execute:  
 `pip install -r ../requirements.txt`  
+- Install [localtunnel](https://localtunnel.github.io/www/) with  
+`npm install -g localtunnel`  
 
 ### Dependencies  
 - _Flask_  
@@ -44,12 +49,10 @@ Navigate to the db directory and execute the following commands
 `sh recreate_db.sh`
 
 # Enable a GPT to access the application running on localhost (For the Database API example)  
-1. Install [localtunnel](https://localtunnel.github.io/www/) with  
-`npm install -g localtunnel`
-2. Execute   
+1. Execute   
 `lt --port 5000`
-3. Copy the _Forwarding_ URL
-4. Paste the URL in the **LT_URL** placeholders in the _ai-plugin.json_ and _openapi.yaml_ files
+2. Copy the _Forwarding_ URL
+3. Paste the URL in the **LT_URL** placeholders in the _openapi.yaml_ file
 
 # Start the application
 In the root directory run:  
